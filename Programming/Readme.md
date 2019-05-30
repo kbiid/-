@@ -11,5 +11,5 @@ API까지 제공하는 형태
 - CI/CD는 애플리케이션 개발 단계를 자동화하여 애플리케이션을 보다 짧은 주기로 고객에게 제공하는 방법. 지속적인 통합, 지속적인 서비스 제공,
 지속적인 배포.
 - CI(Continuous Integration)
-- CD(Continuous Delivery)
+- CD는 (Continuous Delivery) or (Continuous Deployment)
 - https://www.redhat.com/ko/topics/devops/what-is-ci-cd
