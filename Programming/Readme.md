@@ -13,3 +13,9 @@ API까지 제공하는 형태
 - CI(Continuous Integration)
 - CD는 (Continuous Delivery) or (Continuous Deployment)
 - https://www.redhat.com/ko/topics/devops/what-is-ci-cd
+
+## XML vs JSON vs YAML
+- XML은 데이터를 표현하기 위해 많이 사용되어 온 방식으로 HTML과 흡사한 구조를 가지고 있음. 고유한 문법이 있으며 소프트웨어 및 하드웨어에 대하여 독립적으로 데이터를 처리할 수 있음. 특징은 꺽쇠(<>). 트리 계층 구조를 가지고 있다.
+- JSON도 데이터를 처리하기 위한 방식. REST API 사용시 가장 많이 사용되며, 주석을 사용할 수 없다.
+- YAML은 JSON과 비슷하게 사람이 읽기 쉬운 형태의 데이터 표현. 주석을 사용 가능하며 개행, 공백으로 블록을 인식. 태그를 사용하지 않으며 공백 위주로 데이터를 구분하므로 한 줄로 작성할 수 없다. 한글과 같은 유니코드를 그대로 사용할 수 있다는 장점이 있음.
+- https://ndb796.tistory.com/251
