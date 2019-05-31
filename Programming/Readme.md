@@ -55,3 +55,8 @@ API까지 제공하는 형태
 - I : ISP(Interface Segregaion Principle) 인터페이스 분리 원칙. 클라이언트가 자신이 이용하지 않는 메서드에 의존하지 않아야 한다는 원칙. 자신이 사용하지 않는 기능(인터페이스)에는 영향을 받지 말아야 한다는 의미이다.
 - D : DIP(Depndency Inversion Principle) 의존성 역전 법칙 : 상위클래스는 하위클래스에 의존해서는 안된다는 법칙. 
 - https://wkdtjsgur100.github.io/solid-principle/
+
+## PMO, PM, PL
+- PMO(Project Management Office) : 사업 주관기관의 입장에서 운영되며, 프로젝트를 성공적으로 수행하기 위해 프로젝트 전체 추진단계 및 전 분야를 총괄 관리하는 사업관리 전문조직.
+- PM(Project Manager) : 프로젝트의 모든 책임을 지는 사람. PM은 조직의 외부와 조직을 매개해주는 역할. 외적으로는 대표하여 협상이나 회의를 하며 내적으로는 스케쥴, 리소스 조달, 품질에 대한 지휘를 한다.
+- PL(Project Leader) : PM이 외부로의 대표자라면, PL은 내부에서의 인솔자. 업무의 분담, 작업지시, 리소스 배분, 문제 해결방안의 도출 등의 역할을 기대받는다. 
