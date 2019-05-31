@@ -1,4 +1,4 @@
-## IaaS, PaaS, SaaS
+## IaaS, PaaS, SaaS, BaaS
 - Iaas(Infrastructure as a Service)는 서버를 운영하기 위한 서버 자원, IP, Network, Storage, 전력 등등 인프라를 구축하기 필요한 것들을
 가상의 환경에서 쉽고 편하게 이용할 수 있도록 서비스 형태로 제공. H/W 확장성이 좋고 탄력적이면 빠른 제공이 가능한 가상화 기술 사용.
 PaaS,SaaS의 기반이 되는 기술
