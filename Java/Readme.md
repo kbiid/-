@@ -94,7 +94,7 @@
   </li>
   <li>
     지역 내부 클래스(local inner class)
-    - 메소드 안에서 정의하는 클래스. 이름이 있는 local 클래스.  
+    - 메소드 안에서 정의하는 클래스. 이름이 있는 local 클래스.
     - 이름이 없는 local 클래스 : 익명 클래스(anonymous class) -> 람다 표현식(lambda expression)
   </li>
 </ol>
