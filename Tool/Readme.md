@@ -22,8 +22,7 @@
 - https://www.oss.kr/info_techtip/show/5231af26-c127-4041-bec9-b6cea244bafb
 
 ## 소스 정적 분석 툴
-- 정적분석? 정적분석은 소프트웨어를 분석하는 방법의 하나로 소프트웨어를 실행하지 않고 코드 레벨에서 분석하는 방법. 
-
+- 정적분석? 정적분석은 소프트웨어를 분석하는 방법의 하나로 소프트웨어를 실행하지 않고 코드 레벨에서 분석하는 방법.
 - FindBugs : 미국의 Maryland 대학에서 만듬. Java 프로그램에서 100여개의 잠재적인 에러 타입을 찾아주며, 이 잠재적인 에러는 scariest, scary, troubling, concern으로 구분하여 점수가 주어짐. LGPL(Lesser GNU Public License) 라이센스임.
 <ul>
  <li>목적 : 잠재적 버그 찾기(자바 소스파일이 아닌 바이트 코드를 이용)</li>
