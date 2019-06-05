@@ -24,20 +24,20 @@
 ## 소스 정적 분석 툴
 - 정적분석? 정적분석은 소프트웨어를 분석하는 방법의 하나로 소프트웨어를 실행하지 않고 코드 레벨에서 분석하는 방법. 
 
-- FindBugs : GNU 라이센스로 미국의 Maryland 대학에서 만듬. Java 프로그램에서 100여개의 잠재적인 에러 타입을 찾아주며, 이 잠재적인 에러는 scariest, scary, troubling, concern으로 구분하여 점수가 주어짐.
+- FindBugs : 미국의 Maryland 대학에서 만듬. Java 프로그램에서 100여개의 잠재적인 에러 타입을 찾아주며, 이 잠재적인 에러는 scariest, scary, troubling, concern으로 구분하여 점수가 주어짐. LGPL(Lesser GNU Public License) 라이센스임.
 <ul>
  <li>목적 : 잠재적 버그 찾기(자바 소스파일이 아닌 바이트 코드를 이용)</li>
  <li>장점 : 실제 결함을 잘 찾아줌. 정확성이 높음. 바이트 코드를 읽음으로 속도가 빠름.</li>
  <li>약점 : 컴파일된 클래스 파일에서 바이트 코드를 읽어서 사용해야 하므로 빌드과정이 필수</li>
 </ul>
-- PMD : PMD는 미사용 변수, 비어있는 코드 블락, 불필요한 오브젝트 생성과 같은 Defect을 유발할 수 있는 코드를 검사. PMD는 Java에서 많이 사용하지만, Javascript, PLSQL, Apache Velocity, XML, XSL과 같은 다양한 언어를 지원.
+- PMD : PMD는 미사용 변수, 비어있는 코드 블락, 불필요한 오브젝트 생성과 같은 Defect을 유발할 수 있는 코드를 검사. PMD는 Java에서 많이 사용하지만, Javascript, PLSQL, Apache Velocity, XML, XSL과 같은 다양한 언어를 지원. BSD-style license.
 - PMD의 부수적인 기능으로 CPD(Copy-Paste-Detector)가 있는데, 중복된 코드를 검출해주는 정적분석 도구이다. Java,C/C++,C#,PHP,Ruby,Fortran,Javascript,Object C,Python 등 다양한 언어를 지원.
 <ul>
  <li>목적 : 잠재적인 문제들, 버그 가능성이 있는 부분들, 사용되지 않았거나 최적화 되지 않은 코드들 검색</li>
  <li>장점 : 종종 실제 결함을 찾아줌.</li>
  <li>약점 : 복제된 코드를 찾는 속도가 느림</li>
 </ul>
-- Checkstyle : 개발된 코드가 얼마나 코딩 룰을 잘 따르고 있는지 분석해주는 정적 도구. 기본적으로 내장된 코드룰은 Google's Style과 Unix Style이다. 하지만 조직 만의 코딩 룰을 정의하고 작성된 코드들이 이를 잘 따르고 있는지 점검할 수 있다.
+- Checkstyle : 개발된 코드가 얼마나 코딩 룰을 잘 따르고 있는지 분석해주는 정적 도구. 기본적으로 내장된 코드룰은 Google's Style과 Unix Style이다. 하지만 조직 만의 코딩 룰을 정의하고 작성된 코드들이 이를 잘 따르고 있는지 점검할 수 있다. Lesser General Public 라이센스임.
 <ul>
  <li>목적 : 자바 소스 파일을 읽어서 소스 코드 표준에 위반되는 것들을 검색</li>
  <li>장점 : 정해준 코딩 규약에 위반되는 것들을 검사해줌. 직접 코딩 규약을 만들어 사용가능</li>
