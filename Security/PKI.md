@@ -11,9 +11,10 @@
 - https://brownbears.tistory.com/332
 
 - https://gaeko-security-hack.tistory.com/123
+* IETF(Internet Enginerring Task Force, 국제 인터넷 표준화 기구) : 인터넷의 운영,관리,개발에 대해 협의하고 프로토콜과 구조적인 사안들을 분석하는 인터넷 표준화 작업기구이다.
 
 ## SSL 인증서
-- SSL 인증서는 클라이언트와 서버간의 통신을 제3자가 보증해주는 전자화된 문서이다. 
+- 인증서는 클라이언트와 서버간의 통신을 제3자가 보증해주는 전자화된 문서이다. 
 - SSL과 SSL 인증서를 이용했을 때의 이점
 <ul>
   <li>통신 내용이 공격자에게 노출되는 것을 막을 수 있다.</li>
@@ -36,3 +37,9 @@
   <li>사용자(End Entitry) : PKI의 최종 사용자 및 시스템을 포함하며 인증서와 비공개키를 소지하고 있음</li>
 </ul>
 - http://wiki.wikisecurity.net/wiki:pki
+
+## 암호화 알고리즘
+- DES(Data Encryption Standard) : 평문을 64비트로 나눠 56비트의 키를 이용해 다시 64비트의 암호문을 만들어 내는 알고리즘이다.
+- AES(Advanced Encryption Standard Algoritm) : DES를 대체한 암호 알고리즘이며 암호화와 복호화 과정을 동일한 키를 사용하는 대칭키 알고리즘이다. DES에 비해서 키 사이즈가 자유롭다. 즉, 가변 길이의 블록과 가변 길이의 키 사용이 가능하다. 속도와 코드 효율성 면에서 효율적이다. DES와의 차이점은 페이스텔 구조가 아닌 SPN 구조를 이용한다.
+- https://www.crocus.co.kr/1230
+- RSA(Rivest Sharmir Adleman) : 공개키 암호시스템의 하나로, 암호화뿐만 아니라 전자서명이 가능한 최초의 알고리즘으로 알려져 있다. 
