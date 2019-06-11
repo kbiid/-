@@ -18,3 +18,12 @@
   <li> 공개키 암호(Public-key Encryption) : 비대칭키 암호는 공개키 암호라고도 하며, 대칭키 암호와 달리 암.복호화에서 서로 다른 키를 사용하는 알고리즘이다. 송신자는 수신자의 공개키를 이용하여 암호화하며, 수신자는 자신의 공개키로 암호화된 암호문을 자신의 개인키로 복호화할 수 있다. 공개키 암호는 복잡한 수학 연산을 사용하기 때문에 대칭키 암호에 비해 효율성이 떨어질 수 있다. 하지만, 여러 송신자가 하나의 공개키로 암호화를 수행하기 때문에 사용자가 많더라도 키를 관리하는 데에 유리하다. 대표적인 알고리즘으로는 RSA, ElGamal, ECC등이 있다.</li>
   <li> 전자 서명(Digital Signature) : 인터넷 상에서 본인임을 증명하기 위해 서명을 하는 수단으로, 공개키 암호를 거꾸로 활용하는 방식이다. 송.수신자의 역할이 반대로 되어, 개인키를 소유한 사람만ㄴ이 전자 서명 알고리즘을 통해 평문에 대한 서명 값을 생성할 수 있다. 생성된 서명 값에 대하여 공개키를 이용하면 평문을 검증할 수 있기 때문에, 누구나 그 서명을 검증할 수 있게 된다. 대표적인 알고리즘으로는 DSA,RSA SIgnature, ECDSA 등이 있다.</li>
 </ul>
+
+## JCA
+- JCA(Java Cryptography Architecture). Java는 자체적인 보안 관련 기능을 가지고 있는데 그 중에서 JCA는 가장 핵심이다. JCA는 프로바이더 구조를 사용하면서 보안과 관련된 다양한 API를 제공한다.
+- JCA는 다양한 기능을 제공 : 전자서명(Digital Signature), 메시지 다이제스트(Message Digest, hashs), 인증서와 인증서 유효한 검사(Certificate Validation), 키 생성 및 관리 그리고 보안 램덤 수(Secure Random Number) 생성등 현대 정보 통신 암호 기술 중에서 필수적인 것은 모두 제공.
+- JCA는 프로바이더 구조를 기반으로, 구현 독립성(Implementation Independencd)과 구현 호환성(Implementation interoperability), 알고리즘 확장성(Algoritm Extensibility)을 갖춘 Java 보안 플랫폼이다.
+- Cryptographic Service Providers : 모든 프로바이더는 java.security.Provider 클래스의 구현체다. 
+* 프로바이더란 Java 시큐리티의 전체 또는 일부를 구현하는 것. 알고리즘, 열쇠 생성, 열쇠 변환 및 관리 기능.
+- Key Management : JCA에서 가장 중요한 것이 프로바이더, 키 관리다. Java는 키스토어(KeyStore)라고 부르는 일종의 키 데이터베이스를 이용해 키/인증서 저장소를 관리한다. 키스토어는 인증 또는 암호화, 서명 목적의 정보가 필요한 애플리케이션에서 유용하게 쓰일 수 있다.
+ - https://d2.naver.com/helloworld/197937
