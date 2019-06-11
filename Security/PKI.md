@@ -11,6 +11,12 @@
 - https://brownbears.tistory.com/332
 - https://gaeko-security-hack.tistory.com/123
 * IETF(Internet Enginerring Task Force, 국제 인터넷 표준화 기구) : 인터넷의 운영,관리,개발에 대해 협의하고 프로토콜과 구조적인 사안들을 분석하는 인터넷 표준화 작업기구이다.
+- 장점
+<ul>
+  <li>정보유출 방지</li>
+  <li>위조 사이트(피싱) 방지</li>
+  <li>사이트 신뢰도 향상</li>
+</ul>
 
 ## SSL 작동원리
 <ol>
