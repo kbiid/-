@@ -39,3 +39,6 @@
  ## JCE
  - JCE(Java Cryptography Extension) : JDK에 포함된 Java 보안관련 패키지로써 대칭키를 이용한 데이터 암.복호화를 지원한다. 적용가능한 암호화 알고리즘으로는 DES(Digital Encryption Standard), DESede(Triple DES Encryption), AES(Advanced Encryption Standard)가 있으며, 이들은 모두 블록화 알고리즘이다. 
  - DES는 안전하지 않다는 견해가 많아져 이를 보완하고자 TripleDES가 고안되었는데, 이는 DES의 단점을 보완하기 위해 기존의 DES방식을 3번 적용(암호화 -> 복호화 -> 암호화) 시킨것이다. 3번의 암복화의 첫글자를 따서 DESede라고도 부른다.
+
+## 참고
+- https://d2.naver.com/helloworld/744920
