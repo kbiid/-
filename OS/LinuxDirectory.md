@@ -24,5 +24,5 @@
 
 ## /etc/profile .profile
 - .profile은 유닉스에서 로그인을 위한 환경설정을 저장한다. (리눅스는 /etc/progile은 있지만 .profile은 없는 경우도 있다)
-- /etc/profile은 모든 계정에 공통적으로 적용되고, .profile은ㄴ 해당하는 로그인 계정에서 사용하는 환경설정을 저장한다.(.profile은 각 계정의 홈 디렉토리 아래에 존재한다.)
+- /etc/profile은 모든 계정에 공통적으로 적용되고, .profile은 해당하는 로그인 계정에서 사용하는 환경설정을 저장한다.(.profile은 각 계정의 홈 디렉토리 아래에 존재한다.)
 - root로 로그인을 하면 먼저 /etc/profile을 읽어들여서 적용하고 그 다음 루트의 홈 디렉토리 아래에 있는 루트의 .profile을 읽어들인다.
