@@ -10,7 +10,7 @@
 - df : https://shaeod.tistory.com/680
 - passwd, chage : https://m.blog.naver.com/PostView.nhn?blogId=bellship99&logNo=221197450600&proxyReferer=https%3A%2F%2Fwww.google.com%2F
 - ls : https://withcoding.com/89
-- chomod : https://ttend.tistory.com/686
+- chmod : https://ttend.tistory.com/686
 - rm : https://withcoding.com/95
 - alias : https://webdir.tistory.com/107
 - 사용자 확인 : https://ttend.tistory.com/336
