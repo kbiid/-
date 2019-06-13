@@ -38,15 +38,16 @@
 
 ## String vs StringBuffer vs StringBuilder
 - String은 immutable(불변)하고 StringBuffer, StringBuilder는 mutable(가변)하다.
-- String은 new 연산을 통해 생성되면 그 인스턴스의 메모리 공간은 절대 변하지 않는다. 그래서 + 연산이나 concat을 이용해서 문자열에 변화를 줘도 메모리 공간이 변하는 것이 아니라 새로운 String객체를 new로 만들어서 새로운 메모리 공간을 만드는 것이다. 즉, String 클래스 객체는 Heap 메모리 영역에 생성)
+- String은 new 연산을 통해 생성되면 그 인스턴스의 메모리 공간은 절대 변하지 않는다. 그래서 + 연산이나 concat을 이용해서 문자열에 변화를 줘도 메모리 공간이 변하는 것이 아니라 새로운 String객체를 new로 만들어서 새로운 메모리 공간을 만드는 것이다. 즉, String 클래스 객체는 Heap 메모리 영역에 생성). 이 때문에 시스템 자원(시간 , 메모리) 등이 낭비될 여지가 있다.
 - 이렇게 새로운 문자열이 만들어지면 기존의 문자열은 가비지 콜렉터에 의해 제거되야 하는 단점(언제 제거될지 모름)이 있다.
 - 이러한 문자열 연산이 많아질 때 계속해서 객체를 만드는 오버헤드가 발생하므로 성능이 떨어질 수 밖에 없는 단점이 있다.(+연산에 내부적으로 char배열을 사용함)
 - 대신 String 클래스의 객체는 불변하기 때문에 단순하게 읽어가는 조회연산에서는 타 클래스보다 빠르게 읽을 수 있다. 또한 불변하기 때문에 멀티쓰레드환경에서 동기화를 신경 쓸 필요가 없다는 장점들이 있다. 즉, String 클래스는 문자열 연산이 적고 조회가 많을 때 멀티쓰레드 환경에서 사용하면 좋다.
+- String이 immutable인 이유는 안정성 때문이다. 읽기 목적이 뚜렷한 String 생성시 처음에만 문자열을 할당하고 그 이후엔 수정하지 말고, 읽기만 하라는 것이다. immutable 클래스의 가장 큰 장점은 안전하게 공유될 수 있다는 점이다. 여러 쓰레드나 객체에서 참조하는 경우 synchronization(동기화) 없이도 데이터가 안전하게 공유되기 때문이다. 따라서 변경하지 않고 읽기용 또는 공유 목적 하에 있는 문자열은 String immutable 클래스를 사용하는 것이 바람직하다.
 - StringBuffer와 StringBuilder 클래스는 String과 다르게 mutable(변경가능)하다. 즉, 문자열 연산에 있어서 클래스를 한번만 만들고(new), 연산이 필요할 때 크기를 변경시켜서 문자열을 변경한다. 그러므로 문자열 연산이 자주 있을 때 사용하면 성능이 좋다.
 - StringBuffer와 StringBuilder의 차이는?
 <ul>
   <li>StringBuffer는 멀티쓰레드환경에서 synchronized키워드가 가능하므로 동기화가 가능하다. 즉,thread-safe하다.</li>
-  <li>StringBuilder는 동기화를 지원하지 않기 때문에 멀티쓰레드환경에서는 적합하지 않다. 대신 StringBuilder가 동기화를 고려하지 않기 때문에 싱글쓸드 환경에서 StringBuffer에 비해 연산처리가 빠르다.</li>
+  <li>StringBuilder는 JDK 1.5에서 새롭게 추가된 클래스이며, 동기화를 지원하지 않기 때문에 멀티쓰레드환경에서는 적합하지 않다. 대신 StringBuilder가 동기화를 고려하지 않기 때문에 싱글쓸드 환경에서 StringBuffer에 비해 연산처리가 빠르다.</li>
 </ul>
 - 결론 : 문자열 연산이 많을 때 멀티쓰레드환경에서는 StringBuffer, 싱글쓰레드 또는 쓰레드를 신경쓰지 않아도 되는 환경에서는 StringBuilder를 사용하는 것이 좋다.
 - JDK 1.5 이상부터 String에서 +연산으로 작성하더라고 StringBuilder로 컴파일하게 만들어서 성능적인 차이는 거의 없지만 여전히 String 클래스의 객체 생성하는 부분이 동일하므로 StringBuffer,StringBuilder 사용이 필요함
