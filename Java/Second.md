@@ -35,3 +35,22 @@
 - Call by value : 메소드 호출 시에 사용되는 인자의 메모리에 저장되어 있는 값을 복사하여 보낸다.
 - Call by refenrece : 메소드 호출 시 사용되는 인자 값의 메모리에 저장되어 있는 주소를 복사하여 보낸다.
 - 다른 메소드에서 현재의 메소드 내의 변수 값을 바꾸는 현상을 사이트 이펙트(side effect)라고 한다. 사이드 이펙트는 메소드 간의 값 전달을 쉽게 하기 때문에 편리하지만, 실수로 프로그래머가 모르는 사이에 값이 바뀌면 심각한 문제를 일으킬 수 있기 때문에 위험하다. 그래서 자바는 모든 기본 데이터형은 Call by Value로 값을 주고 받아서 사이드 이펙트가 일어나지 않도록 하고, Call by Reference가 필요한 경우 명시적으로 클래스 객체를 주고받도록 정해둔 것이다.
+
+## String vs StringBuffer vs StringBuilder
+- String은 immutable(불변)하고 StringBuffer, StringBuilder는 mutable(가변)하다.
+- String은 new 연산을 통해 생성되면 그 인스턴스의 메모리 공간은 절대 변하지 않는다. 그래서 + 연산이나 concat을 이용해서 문자열에 변화를 줘도 메모리 공간이 변하는 것이 아니라 새로운 String객체를 new로 만들어서 새로운 메모리 공간을 만드는 것이다. 즉, String 클래스 객체는 Heap 메모리 영역에 생성)
+- 이렇게 새로운 문자열이 만들어지면 기존의 문자열은 가비지 콜렉터에 의해 제거되야 하는 단점(언제 제거될지 모름)이 있다.
+- 이러한 문자열 연산이 많아질 때 계속해서 객체를 만드는 오버헤드가 발생하므로 성능이 떨어질 수 밖에 없는 단점이 있다.(+연산에 내부적으로 char배열을 사용함)
+- 대신 String 클래스의 객체는 불변하기 때문에 단순하게 읽어가는 조회연산에서는 타 클래스보다 빠르게 읽을 수 있다. 또한 불변하기 때문에 멀티쓰레드환경에서 동기화를 신경 쓸 필요가 없다는 장점들이 있다. 즉, String 클래스는 문자열 연산이 적고 조회가 많을 때 멀티쓰레드 환경에서 사용하면 좋다.
+- StringBuffer와 StringBuilder 클래스는 String과 다르게 mutable(변경가능)하다. 즉, 문자열 연산에 있어서 클래스를 한번만 만들고(new), 연산이 필요할 때 크기를 변경시켜서 문자열을 변경한다. 그러므로 문자열 연산이 자주 있을 때 사용하면 성능이 좋다.
+- StringBuffer와 StringBuilder의 차이는?
+<ul>
+  <li>StringBuffer는 멀티쓰레드환경에서 synchronized키워드가 가능하므로 동기화가 가능하다. 즉,thread-safe하다.</li>
+  <li>StringBuilder는 동기화를 지원하지 않기 때문에 멀티쓰레드환경에서는 적합하지 않다. 대신 StringBuilder가 동기화를 고려하지 않기 때문에 싱글쓸드 환경에서 StringBuffer에 비해 연산처리가 빠르다.</li>
+</ul>
+- 결론 : 문자열 연산이 많을 때 멀티쓰레드환경에서는 StringBuffer, 싱글쓰레드 또는 쓰레드를 신경쓰지 않아도 되는 환경에서는 StringBuilder를 사용하는 것이 좋다.
+- JDK 1.5 이상부터 String에서 +연산으로 작성하더라고 StringBuilder로 컴파일하게 만들어서 성능적인 차이는 거의 없지만 여전히 String 클래스의 객체 생성하는 부분이 동일하므로 StringBuffer,StringBuilder 사용이 필요함
+
+## mutable, immutable
+- mutable 객체는 객체 내의 특정 요소를 변경할 수 있는 객체이다. List, ArrayList, HashMap 등의 컬렉션들이 대표적인 mutable 객체이다.
+- immutable 객체는 객체 내의 특정 요소의 값을 변경 할 수 없는 개체이다. String, Integer, Double, Long과 같은 객체는 대표적인 immutable 객체이다.
