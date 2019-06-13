@@ -50,7 +50,9 @@
 </ul>
 - 결론 : 문자열 연산이 많을 때 멀티쓰레드환경에서는 StringBuffer, 싱글쓰레드 또는 쓰레드를 신경쓰지 않아도 되는 환경에서는 StringBuilder를 사용하는 것이 좋다.
 - JDK 1.5 이상부터 String에서 +연산으로 작성하더라고 StringBuilder로 컴파일하게 만들어서 성능적인 차이는 거의 없지만 여전히 String 클래스의 객체 생성하는 부분이 동일하므로 StringBuffer,StringBuilder 사용이 필요함
+- String이 왜 Immutable인가? : http://www.mimul.com/pebble/default/2015/10/10/1444466677572.html
 
 ## mutable, immutable
 - mutable 객체는 객체 내의 특정 요소를 변경할 수 있는 객체이다. List, ArrayList, HashMap 등의 컬렉션들이 대표적인 mutable 객체이다.
 - immutable 객체는 객체 내의 특정 요소의 값을 변경 할 수 없는 개체이다. String, Integer, Double, Long과 같은 객체는 대표적인 immutable 객체이다.
+
