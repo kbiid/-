@@ -47,7 +47,7 @@
 - StringBuffer와 StringBuilder의 차이는?
 <ul>
   <li>StringBuffer는 멀티쓰레드환경에서 synchronized키워드가 가능하므로 동기화가 가능하다. 즉,thread-safe하다.</li>
-  <li>StringBuilder는 JDK 1.5에서 새롭게 추가된 클래스이며, 동기화를 지원하지 않기 때문에 멀티쓰레드환경에서는 적합하지 않다. 대신 StringBuilder가 동기화를 고려하지 않기 때문에 싱글쓸드 환경에서 StringBuffer에 비해 연산처리가 빠르다.</li>
+  <li>StringBuilder는 JDK 1.5에서 새롭게 추가된 클래스이며, 동기화를 지원하지 않기 때문에 멀티쓰레드환경에서는 적합하지 않다. 대신 StringBuilder가 동기화를 고려하지 않기 때문에 싱글드 환경에서 StringBuffer에 비해 연산처리가 빠르다.</li>
 </ul>
 - 결론 : 문자열 연산이 많을 때 멀티쓰레드환경에서는 StringBuffer, 싱글쓰레드 또는 쓰레드를 신경쓰지 않아도 되는 환경에서는 StringBuilder를 사용하는 것이 좋다.
 - JDK 1.5 이상부터 String에서 +연산으로 작성하더라고 StringBuilder로 컴파일하게 만들어서 성능적인 차이는 거의 없지만 여전히 String 클래스의 객체 생성하는 부분이 동일하므로 StringBuffer,StringBuilder 사용이 필요함
