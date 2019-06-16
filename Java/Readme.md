@@ -1,5 +1,12 @@
 ## Java 버전별 특징
 
+# Java7
+- try-with-resources : try에 자원객체를 전달하면 finally 블록으로 종료 처리를 하지 않아도 try 코드 블록이 끝나면 자동으로 자원을 종료해주는 기능.
+- 멀티캐치(multicatch) : 하나의 catch 블록에서 동시에 여러 예외를 묶어서 처리할 수 있도록 하는 기능
+- swtich-case의 문자열 지원
+- fork/join을 이용한 작업 분할 실행
+- ECC 암호화 기본 내장
+
 # Java8
 - 람다 표현식(lambda expression) : 함수형 프로그래밍
 - 스트림 API(stream API) : 데이터의 추상화
