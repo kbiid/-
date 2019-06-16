@@ -43,6 +43,8 @@
 - 모든 클래스는 UID를 가지고 있는데 클래스의 내용이 변경되면 UID값 역시 같이 바뀌어 버린다. 직렬화하여 통신하고 UID값으로 통신한게 정상인지 확인하는데 그 값이 바뀌게 되면 다른 Class로 인식을 하게 된다. 이를 방지하기 위해 고유값으로 미리 명시를 해주는 부분이 "private static final long serialVersionUID"이다.
 - Serializable을 상속하는 Class의 경우 Class의 versioning 용도로 serialVersionUID 변수를 사용한다. 이때 serialVersionUID 값을 명시적으로 지정하지 않으면 Complier가 계산한 값을 부여하는데 Serializable Class 또는 Outer Class에 변경이 있으면 serialVersionUID 값이 바뀌게 된다. 잠재적인 문제는 Serialize 할 때와 Deserialize할때의 값이 다르면 InvalidClassExceptions이 발생하여 저장된 값을 객체로 Restore할 수 없다.
 - 즉, serialVersionUID를 지정하지 않으면 컴파일러가 계산한 값을 부여한다. 그렇다면 컴파일러에 따라 할당되는 값이 다를 수 있다. 컴파일러는 serializable class 또는 outer class를 참고하여 만들기 때문에 만약 클래스에 변경이 있으면 serialVersionUID도 변경이 있을 수 있다.
+- 가능하면 모든 직렬화 가능 클래스가 명시적으로 선언하는 것을 추천한다. 디폴트의 serialVersionUID의 계산이, 컴파일러의 구현에 따라서 달라질 직렬화 가능Serializable 클래스가 영향을 받기 쉽고, 직렬화 복원중에 InvalidClassExceptions을 발생시킬 수 있기 때문. 따라서,  컴파일러에 상관없이 일관성을 확보하기 위해서 명시적으로 선언하는 것이 좋다. private으로 선언하면 serialVersionUID값이 상속되지 않는다.
+- 배열클래스는 serialVersionUID를 명시적으로 선언할 수 없기 때문에, 디폴트 값을 사용한다.
 
 ## CSV 라이브러리
 - numpy : 수학,과학 수치 연산
