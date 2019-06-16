@@ -56,4 +56,3 @@
 ## mutable, immutable
 - mutable 객체는 객체 내의 특정 요소를 변경할 수 있는 객체이다. List, ArrayList, HashMap 등의 컬렉션들이 대표적인 mutable 객체이다.
 - immutable 객체는 객체 내의 특정 요소의 값을 변경 할 수 없는 개체이다. String, Integer, Double, Long과 같은 객체는 대표적인 immutable 객체이다.
-
