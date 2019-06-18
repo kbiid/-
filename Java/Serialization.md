@@ -54,3 +54,14 @@
 - sklearn : 딥러닝 기능
 - wordcloud : 워드 클라우드
 - konlpy : 한글 형태소 분석, 음성 인식에선 필수로 쓰임
+
+## XML 라이브러리
+- SAX 파서 : Simple API for XML Parser의 약어로, Java API에서 제공된다. 기본적으로 SAX Parser는 노드들이 들어올때마다 event가 발생하면서 순차적으로 parsing을 하게 된다. 그래서 어떤 노드에 무작위 적으로 접근을 하기 위해서는 이 node들을 사용자가 트리구조로 생성한뒤, 메모리에 올려서 사용하여야 한다. XML이 복잡하지 않고, 메모리를 최소화 하면서 최대한 빠른 처리가 필요할 때 사용. 장점 : 순차적으로 파싱을 하기 때문에 속도가 빠르고 메모리를 적게 먹는다. 단점 : 특정 노드를 무작위적으로 접근하는 random access를 할 수 없다. 
+- DOM 파서 : xml test의 string들과 stream들을 parsing할 때 사용되는 것으로서, XML을 parsing 하면서, 트리구조를 만들고 이 트리구조 전체를 메모리 상에 로드 시킨다. 메모리는 좀 소모되지만 생산성, XML 오브젝트 핸들링, 성은이 필요할 때 사용. 장점 : 사용법이 간단하고, 트리구조 전체를 볼수 있다. 단점 : 메모리를 많이 먹고, 조금 느리다.
+- StAX : Streaming API for XML. 자바 1.6부터 포함된 Paeser API. SAX와 DOM의 장점을 보완한 새로운 파서 API 모델. push와 pull방식을 동시에 제공하는 형태. XML문서를 파싱할 때 하나의 Fragment로 구분한다. 즉 정해진 엘리먼트를 읽을때는 Dom 방식을 사용해서 Fragment로 처리하는 것은 SAX의 Push 방식을 사용하고 있다. 실제 파서는 JAXB를 사용하고 Rading 정책은 StAX형식을 따르는 것이 좋은 조합. 속도는 JAXB보다 느리지만, 메모리 소모가 적은 경우 사용.
+- JAXB : Java Architecture for XML Bind. XML로 부터 Java Object를 직렬화 하는 Unmarshalling과 이 반대의 Marshalling을 수행할 수 있도록 해주는 API. 자바 클래스를 XML로 포현할 수 있게 해줌. JAXB는 메모리의 데이터를 XML 형식으로 변환하여 저장할 수 있고, 이 과정을 위해 프로그램의 각 클래스에서 XML을 읽고 저장하는 일을 구현해야 한다.
+
+## Marshalling과 Serialization의 차이
+- Marshalling : 객체의 메모리 구조를 저장이나 전송을 위해서 적당한 자료형태로 변형하는 것을 의미한다. Marshalling은 보통 서로 다른 컴퓨터 혹은 서로 다른 프로그램 간의 데이터가 이동되어야할 경우 사용된다. 직렬화와 비슷한 경우는 개체가 원격의 다른 객체와 통신할 때 serialize 된 객체를 사용할 경우이다. Marshalling을 수행함으로써 복잡한 통신, 사용자 정의/복잡한 구조의 객체들을 사용하는 대신, 단순한 primitive들을 사용할 수 있다. Marshalling의 반대말은 Unmarshalling.
+- Marshalling을 하게 되면, 원격 프로시저를 호출하는 것에서 함수의 parameter 값들 return값들을 전달할 수 있다. 보통 Marshalling은 여기저기에서 parameter들을 얻는 반면, Serialization은 구조화된 데이터를 byte stream과 같은 primitive 형식 혹은 그 반대로 복사를 하는 것을 의미한다. 
+- Marshalling은 코드베이스를 가져와 만드는 개념이고 Serialization은 객체 자체를 복사하는 개념이다.
