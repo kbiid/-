@@ -50,3 +50,32 @@
   <li>이제는 호출스택이 2개이기 때문에 스케줄러가 정한 순서에 의해서 번갈아 가면서 실행된다. </li>
   </ol>
 - 한 Thread에서 예외가 발생해서 종료되어도 다른 Thread의 실행에는 영향을 미치지 않는다.
+
+## Thread Pool
+- Thread Pool이란 쉽게 말해서 스레드를 미리 만들어 두는 것이다. thread가 비록 fork()에 비해서 생성과 소멸시에 훨씬 적은 비용을 소모하지만 꽤 많은 시간과 비용을 소비하는 작업이다. Thread Pooling은 이러한 반복적인 thread의 생성/소멸에 의한 비효율적인 측면을 없애고자 하는 목적으로 만들어진 프로그래밍 기법이다.
+- 동작 원리 : 자바에서는 스레드풀을 생성하고 사용할 수 있도록 java.util.concurrent Package에서 ExecutorService 인터페이스와 Executors클래스를 제공하고 있다. Executors의 다양한 정적 메서드를 통해 ExecutorService 구현객체를 만들어서 사용할 수 있으며, 그것이 바로 스레드 풀이다.
+- 장점
+ <ul>
+ <li>스레드를 생성/수거하는데 드는 비용이 들지 않는다.</li>
+ <li>스레드가 생성될 때 os가 메모리 공간을 확보해주고 메모리를 스레드에게 할당해준다.</li>
+ <li>스레드 풀을 미리 만들어 두기 때문에 처음에 생성하는 비용은 들지만 이전의 스레드를 재사용할 수 있으므로 시스템 자원을 줄일 수 있고, 작업을 요청시 이미 스레드가 대기중인 상태이기 때문에 작업을 실행하는데 딜레이가 발생하지 않는다.</li>
+ <li>서비스 적인 측면으로 바라볼 때, 특히 대규모 프로젝트에서 다수의 사용자의 요청을 수용하고, 빠르게 처리하고 대응하기 위해 스레드풀을 사용한다.</li>
+ </ul>
+- 단점
+ <ul>
+ <li>thread pool에 thread를 너무 많이 생성해 두었다가 사용하지 않으면 메모리 낭비가 발생한다.</li>
+ </ul>
+ 
+## ExecutorService, Executor
+- Executor : Java 5부터 제공되는 인터페이스(concurrency api)로서  구현체로 쓰레드 풀, 큐 등을 다양하게 제공하고 있다.
+- ExecutorService : 병렬작업 시 여러개의 작업을 효율적으로 처리하기 위해 제공되는 JAVA의 라이브러리이다. 통상적으로 작업을 분리하고 수행하는 작업을 구현하려고 하면, 각기 다른 Thread를 생성해서 작업을 하고, 처리가 완료되면 해당 Thread를 제거하는 작업을 진행해야 한다. 이러한 일련의 작업을 쉽게 할 수 있도록 도와준다.
+ <ul>
+ <li>CachedThreadPool : thread를 캐싱하는 thread pool(여기서 캐싱의 의미는 일정시간동안 thread를 검사한다는 뜻. 60초 동안 작업이 없으면 pool에서 제거한다.)</li>
+ <li>FixedThreadPool : 고정된 개수를 가진 thread pool</li>
+ <li>SingleThreadExecutor : 한 개의 thread로 작업을 처리하는 thread pool</li>
+ </ul>
+
+## Callable, Runnable
+- Callable은 다른 쓰레드에 의해서 실행되어질 수 있는 클래스의 객체를 위한 interface라는 점에서 Runnable과 비슷한 인터페이스이다.
+- Callable이 Generic으로 받은 Return 타입으로, return을 하는데 반해서, Runnable은 return값이 없다. Callable이 Exception을 낼 수 있는데 반해, Runnable은 그럴 수 없다.
+- Callable이 Runnable의 확장형 개념. Runnable은 1.0, Callable는 1.5에서 생겨남. Runnable은 놔두고 기능을 확장하기 위해서 Callable이 만들어졌다.
