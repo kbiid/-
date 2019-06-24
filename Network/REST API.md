@@ -41,3 +41,6 @@
 ## RESTful하지 못한 경우
 - CRUD 기능을 모두 POST로만 처리하는 API
 - route에 resource, id 외의 정보가 들어가는 경우(/)
+
+## 출처
+- https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
