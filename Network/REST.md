@@ -86,3 +86,5 @@
   <ul><li>URI로 지정한 Resource에 대한 조작을 통일되고 한정적인 인터페이스로 수행한다.</li>
   <li>HTTP 표준 프로토콜에 따르는 모든 플랫폼에서 사용이 가능하다. 특정 언어나 기술에 종속되지 않는다.</li></ul>
   
+  ## 출처
+  - https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
