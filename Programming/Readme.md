@@ -51,7 +51,7 @@ API까지 제공하는 형태
 ## SOLID
 - S : SRP(Single Responsibility Principle) 단일 책임 원칙. 모든 클래스는 단 하나의 책임을 가진다. 즉, 클래스를 수정할 이유가 오직 하나여야한다는 뜻이다. 이는 각 클래스의 응집도(Cohension)을 높이기 위함이다.
 - O : OCP(Open Closed Principle) 개방-폐쇄 원칙. 확장에 대해서는 개방 되어 있어야 하지만, 수정에 대해서는 폐쇄 되어야 한다. 기능을 확장했을 때, 기존 클래스의 변경을 최소화하는 것이다.
-- L : LSP(Liskov Substitusion Principle) 리스코프 치환 법칙. 자식 클래스는 언제나 자신의 부모 클래스를 교체할 수 있다는 원칙이다. 즉, 부모 클래스가 들어갈 자리에 자식 클래스를 넣어도 계획대로 잘 작동해야 한다는 원칙. 업캐스팅을 해도 아무런 문제가 안되어야 한다는 것이다. 
+- L : LSP(Liskov Substitusion Principle) 리스코프 치환 법칙. 자식 클래스는 언제나 자신의 부모 클래스를 교체할 수 있다는 원칙이다. 즉, 부모 클래스가 들어갈 자리에 자식 클래스를 넣어도 계획대로 잘 작동해야 한다는 원칙. 업캐스팅을 해도 아무런 문제가 야 한다는 것이다. 
 - I : ISP(Interface Segregaion Principle) 인터페이스 분리 원칙. 클라이언트가 자신이 이용하지 않는 메서드에 의존하지 않아야 한다는 원칙. 자신이 사용하지 않는 기능(인터페이스)에는 영향을 받지 말아야 한다는 의미이다. 각 메소드의 변경에 따른 클래스의 변경을 최소화하자는데 있다.
 - D : DIP(Depndency Inversion Principle) 의존성 역전 법칙 : 상위클래스는 하위클래스에 의존해서는 안된다는 법칙. 
 - https://wkdtjsgur100.github.io/solid-principle/
