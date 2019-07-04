@@ -18,7 +18,7 @@
     <li>JSP가 수정된 경우 재배포할 필요가 없어 WAS가 알아서 처리한다.(쉬운 배포)</li>
   </ul>
   
-  ## Servlet과 JSP의 관계
+## Servlet과 JSP의 관계
   - JSP만을 이용하는 모델
     <ul>
       <li>JSP가 사용자의 요청을 받아 Java Bean(DTO,DAO)을 호출하여 적절한 동적인 페이지를 생성한다.</li>
