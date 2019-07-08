@@ -38,8 +38,8 @@
   <li>Spring5.0 : JDK 8+,9 등에 대해서 지원하며 Java8을 표준으로 사용한다.
   <ul><li>코어로직에 있어서 JDK 8의 특징들이 강화되었다.</li>
     <li>HTTP 메시지 코덱의 XML과 JSON 지원에 대한 구현이 Encoder와 Decoder의 사용을 통해 추상화 되었다.</li>
-    <li>웹에 대한 지원이 향상되었다. 특히 Protobuf3.0지원이 적용되었다.</li></ul>
-  </li>
+    <li>웹에 대한 지원이 향상되었다. 특히 Protobuf3.0지원이 적용되었다.</li>
+    <li>https://atin.tistory.com/626</li></ul></li>
 </ul>
 
 ## Annotation
