@@ -43,3 +43,41 @@
     <li>Controller(다른 자바 클래스에 데이터를 넘겨주는 부분)는 Java 코드가 중심이 되는 Servlet을 사용</li>
     <li>Model은 Java Beans로, DTO와 DAO를 통해 Mysql과 같은 Data Storage에 </li>
   </ul>
+  
+## web.xml 서블릿 버전별 DTD
+- https://mangkyu.tistory.com/12
+  
+## Servlet 버전별 특징
+  <ul>
+  <li>Tomcat 3.x : JSP 1.1, Servlet 2.2
+    <ul><li>ServletRequest.setCharacterEncoding(String)메소드가 존재하지 않아 모든 요청에 대해 인코딩 변환작업이 필요하다. ex) String param = new String(request.getParameter("param").getBytes("latin1"),"euc-kr");</li>
+    <li>Filter와 Listener가 존재하지 않는다.</li>
+      <li>서블릿을 web.xml에서 매핑하지 않고 패키지명을 포함한 클래스의 완전한 이름을 통해 브라우저에서 서블릿의 직접 호출이 가능하다.</li></ul></li>
+  <li>Tomcat 4.x : JSP 1.2, Servlet 2.3
+    <ul><li>ServletRequest.setCharacterEncoding(String)를 통해서 파라미터의 문자 인코딩을 일괄적으로 지정 가능.</li>
+      <li>Filter와 Listener가 존재한다.</li>
+    <li>서블릿 매핑을 web.xml에 작성하지 않으면 서블릿을 호출할 수 없다.</li>
+    <li>JSTL 1.0이 도입되었다.</li></ul></li>
+  <li>Tomcat 5.x : JSP 2.0, Servlet 2.4
+    <ul><li>Tag LIbrary작성 가능</li>
+      <li>EL을 JSTL이 아닌 모든 템플릿 문자열에서 사용 가능</li>
+    <li>JSTL 1.1이 도입되었다.</li>
+    <li>Function 커스텀 태그를 만들 수 있다.</li></ul></li>
+  </ul>
+  
+## Servlet 3.0
+<ul>
+  <li>Annotations 추가 : 기존 web.xml에서 제공하던 기능을 Annotation을 통해서 제공
+    <ul><li>@WebServlet</li>
+    <li>@WebListener</li>
+    <li>@WebFilter</li>
+    <li>@MultipartConfig : 스프링 프레임워크의 MultipartFile과 사용법과 용도가 유사</li></ul></li>
+  <li>Dynamic Registration of Servlet and Filters : 서블릿, 필터 클래스의 매핑과 등록 해제가 코드에서 가능. ServletContext.addServletMapping(..), ServletContexxt.addFilter(..)등의 ServletContext클래스를 이용하여 직접 코드상의 수정도 가능.</li>
+  <li>Pluggability : Annotation을 통한 서블릿, 필터 정의 또는 web-fragment.xml을 통해 배포 기술자의 모듈화 가능</li>
+  <li>Asychronous Support : 비동기 모드 지원</li>
+  <li>Security : Annotation을 통한 요청별 권한 지원
+    <ul><li>@RolesAllowed</li>
+    <li>@DenyAll</li>
+    <li>@PermitAll</li>
+    <li>@TransportProtected</li></ul></li>
+</ul>
