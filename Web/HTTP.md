@@ -25,3 +25,60 @@
 
 ## HTTP의 멱등성
 - 멱등(idempotent)의 의미는 같은 작업을 계속 반복해도 같은 결과가 나오는 경우를 의미한다. 동일한 자원에 대한 GET 요청이라면 클라이언트에 반환되는 모든 응답은 동일해야 한다. 특정 자원에 대한 DELETE의 경우도 자원은 더 이상 이용할 수 없어야 하며, DELETE 요청을 다시 호출한 경우도 자원은 여전히 사용할 수 없는 상태여야 한다.
+
+## HTTP 통신 방식
+- 2가지 특징
+  <ol>
+  <li> HTTP의 요청(request)과 응답(response) 방식 : 요청을 하고 응답을 받는 구조</li>
+  <li> statless 
+    <ul><li>각 HTTP 통신은 독립적이며 그 전에 처리된 HTTP 통신에 대해 전혀 알지 못함</li>
+      <li>상태를 저장할 필요가 없으므로 HTTP 통신 간의 진행이나 연결 상태의 처리, 저장을 구현 및 관리하지 않아도 됨</li>
+      <li>요청에 대해 독립적으로 응답만 보내줌</li>
+      <li>단점 : stateless라 HTTP 요청시 필요한 모든 데이터를 매번 포함시켜 보내야 함
+        <ul><li>어떤 요청시 사용자가 로그인 되어야 한다고 가정할 때, 해당 사용자 로그인 여부를 포함해 HTTP 요청을 날려야 함</li>
+          <li>이런 점을 해결하기 위해 쿠키(cookie)나 세션(session)등을 사용해 필요한 진행 과정이나 데이터 저장</li>
+          <li>쿠키 : 웹사이트에서 보내온 정보를 저장할 수 있도록 하는 작은 파일로 웹 브라우저(클라이언트)에 저장</li>
+          <li>세션 : 쿠키와 마찬가지로 HTTP 통신상에 필요한 데이터를 저장하는데, 웹 서버에 데이터 저장</li></ul></li></ul>
+  </li></ol>
+
+## Request
+- 메세지 구조
+  <ul><li>요청 라인 : GET / HTTP/1.1
+  <ul><li>요청 메소드 : GET,POST,PUT,DELETE</li>
+    <li>요청 URL</li>
+    <li>HTTP 버전</li></ul></li>
+  <li>요청 헤더 : 키-값 방식으로 들어감
+    <ul><li>Accept : 클라이언트가 받을 수 있는 컨텐츠</li>
+      <li>Cookie : 쿠키</li>
+      <li>Contetnt-Type : 메세지 바디 종류</li>
+      <li>Content-Length : 메세지 바디 길이</li>
+      <li>If-Modified-Since : 특정 날짜 이후에 변경됬을 때만</li></ul></li>
+  <li>요청 바디(엔티티)</li></ul>
+- Content-Type과 Body
+  <ol><li>form 형태 : URLEncoded 방식
+  <ul><li>application/x-www-form-urlencoded</li>
+    <li>메세지 바디 : 쿼리 문자열</li></ul></li>
+  <li>json 형태 : application/json</li>
+  <li>멀티파트 형태 : 이진파일 넘길 때 사용, 하나의 메세지 바디에 파트를 나눠서 작성
+    <ul><li>boundary는 파트 구분자</li>
+      <li>multipart/form-data : boundary=frontier</li></ul></li></ol>
+      
+## Response
+- 메세지 구조
+  <ul><li>응답 라인 : 버전, 상태 코드, 상태 메세지 : HTTP/1.1 200 OK</li>
+  <li>응답 헤더
+    <ul><li>Content-Type : 바디 데이터의 타입</li>
+      <li>Content-Length : 바디 데이터 크기</li>
+      <li>Set-Cookie : 쿠키 설정</li>
+      <li>ETag : 엔티티 태그</li></ul></li>
+  <li>응답 바디 : HTML, JSON, Octet Stream 등이 있다</li></ul>
+- 상태 코드 : https://ko.wikipedia.org/wiki/HTTP_%EC%83%81%ED%83%9C_%EC%BD%94%EB%93%9C
+- Content-Type과 Body
+  <ul><li>text/plain, text/html</li>
+    <li>application/xml, application/json</li>
+    <li>image/png, image/jpg</li>
+    <li>audio/mp3, vieo/mp4</li></ul>
+    
+## 참고
+- https://sjh836.tistory.com/81
+- https://zzsza.github.io/development/2019/03/01/http-structure/
