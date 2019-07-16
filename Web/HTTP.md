@@ -78,7 +78,13 @@
     <li>application/xml, application/json</li>
     <li>image/png, image/jpg</li>
     <li>audio/mp3, vieo/mp4</li></ul>
-    
+
+## HTTP 1.0 1.1 차이
+- https://jaweb.tistory.com/entry/HTTP-HTTP-10-%EA%B3%BC-11-%EC%9D%98-%EC%B0%A8%EC%9D%B4-HTTP10-VS-HTTP11
+
+## HTTP1 HTTP2 차이
+- 
+
 ## 참고
 - https://sjh836.tistory.com/81
 - https://zzsza.github.io/development/2019/03/01/http-structure/
