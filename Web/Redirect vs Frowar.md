@@ -16,3 +16,6 @@
 - URL의 변화 여부(redirect -> 변화 O, forward -> 변화 X)
 - 객체의 사용 여부(redirect -> 재사용 X, forward -> 재사용 O)
 - 시스템(session, DB)에 변화가 생기는 요청(로그인, 회원가입, 글쓰기)의 경우 redirect방식으로 응답하는 것이 바람직하며, 시스템에 변화가 생기지 않는 단순조회(리스트보기, 검색)의 경우 forward 방식으로 응답하는 것이 바람직하다.
+
+## 참고
+- https://doublesprogramming.tistory.com/63
