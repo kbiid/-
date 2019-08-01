@@ -6,8 +6,9 @@
 - 실행 명령어 : ex) java -jar foo.jar
 
 ## Jconsole
-- Jconsole이란 jvm상의 Thread, heap, Memory 및 Vm 정보를 모니터링 하기 위한 툴이다. JDK 1.5에서 제공하며 JMX를 기반으로 동작한다. Jconsole은 JVM의 광범위한 Java Management Extension(JMX) 사용 툴로 자바 플랫폼에서 수행되는 어플리케이션의 퍼포먼스 및 자원 사용에 대한 정보를 제공한다.
-- JMX(Java Management eXtension) : 응용 프로그램(소프트웨어),객체,장치(프린터 등) 및 서비스 지향 네트워크 등을 감시 관리를 위한 도구를 제공하는 자바 API이다. 응용프로그램/객체/장치,서비스 지향 네트워크는 MBean(Managed Bean)이라는 객체로 표현된다. 
+- Jconsole이란 로컬 또는 원격에서 실행중인 자바 어플리케이션 및 jvm상의 Thread, heap, Memory 및 Vm 정보를 모니터링 하기 위한 GUI 툴이다. JDK 1.5에서 제공하며 JMX를 기반으로 동작한다. Jconsole은 JVM의 광범위한 Java Management Extension(JMX) 사용 툴로 자바 플랫폼에서 수행되는 어플리케이션의 퍼포먼스 및 자원 사용에 대한 정보를 제공한다.
+- JMX(Java Management eXtension) : 응용 프로그램(소프트웨어),객체,장치(프린터 등) 및 서비스 지향 네트워크 등을 감시 관리를 위한 도구를 제공하는 자바 API이다. 응용프로그램/객체/장치,서비스 지향 네트워크는 MBean(Managed Bean)이라는 객체로 표현된다.
+- 프롬프트 상에서 jconsole만 입력하면 jconsole이 실행되며, connection 옵션을 사용하여 특정 pid,host:port, jxmUrl을 주어 모니터링을 바로 수행할 수도 있다.
 
 ## JPS
 - JPS : Java Virtual Machine Process Status Tool. 대상 시스템에서 HotSpot JVM(Java Virtual Machine)의 목록을 보여준다. 유닉스의 ps -ef | grep java와 유사한 기능.
