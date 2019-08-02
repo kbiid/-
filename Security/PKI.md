@@ -95,15 +95,15 @@
 - https://soul0.tistory.com/372
 
 - 인증서의 정보
-<ul>
-  <li>인증서 소유자의 e-mail 주소</li>
-  <li>소유자의 이름</li>
-  <li>인증서의 용도</li>
-  <li>인증서 유효기간</li>
-  <li>발행 장소</li>
-  <li>Distingushed Name(DN) : Common Name(CN), 인증서 정보에 대해 서명한 사람의 디지털 ID</li>
-  <li>Public Key</li>
-  <li>해쉬(Hash)</li>
-</ul>
+  <ul>
+    <li>인증서 소유자의 e-mail 주소</li>
+    <li>소유자의 이름</li>
+    <li>인증서의 용도</li>
+    <li>인증서 유효기간</li>
+    <li>발행 장소</li>
+    <li>Distingushed Name(DN) : Common Name(CN), 인증서 정보에 대해 서명한 사람의 디지털 ID</li>
+    <li>Public Key</li>
+    <li>해쉬(Hash)</li>
+  </ul>
 
 - https://wiki.kldp.org/HOWTO/html/SSL-Certificates-HOWTO/x70.html
