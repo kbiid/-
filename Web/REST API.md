@@ -42,5 +42,9 @@
 - CRUD 기능을 모두 POST로만 처리하는 API
 - route에 resource, id 외의 정보가 들어가는 경우(/)
 
+## ROA
+- 자원 지향 아키텍처(Resource Oriented Architecture). 소프트웨어 공학에서 리소스 지향 아키텍처(ROA)는 "Restful" 인터페이스 자원의 형태로 소프트웨어를 설계 및 개발을 위한 소프트웨어 아키텍처와 프로그래밍 패러다임의 스타일이다. 이러한 리소스는 다른 용도로 재사용될 수 있는 소프트웨어 구성 요소이다. ROA 설계 원칙과 지침은 소프트웨어 개발 및 시스템 통합의 단계에서 사용된다.
+
 ## 출처
 - https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
+- https://mygumi.tistory.com/55
