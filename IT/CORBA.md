@@ -36,8 +36,44 @@
   <ul>
     <li>프로그래밍 작업의 단순화를 비롯 효율적인 객체관리</li>
     <li>쉬워진 애플리케이션 서비스 액세스</li>
-    <li>풍부한 </li>
+    <li>풍부한 확장성</li>
   </ul>
+  
+## CORBA와 DCOM 비교
+- CORBA 장점
+  <ul>
+    <li>다양한 플랫폼 지원</li>
+    <li>다양한 프로그래밍 언어 지원</li>
+    <li>위치 투명성 지원</li>
+    <li>정적 및 동적 호출 지원</li>
+    <li>인터페이스 언어(IDL)의 상속 지원</li>
+    <li>강력한 보안 모델</li>
+    <li>멀티쓰레드 지원</li>
+    <li>폴트 톨러런스와 밸런싱 사양</li></ul>
+ - CORBA 단점
+  <ul>
+    <li>코바 벤더의 비 표준화된 확장</li>
+    <li>코바 사양을 100% 지원하는 제품의 부재</li>
+    <li>표준화 되지 못한 명령어</li>
+  </ul>
+- DCOM 장점
+  <ul>
+    <li>뛰어난 개발 툴</li>
+    <li>다양한 Active 컨트롤</li>
+    <li>정적 및 동적 호출 지원</li>
+    <li>위치 투명성 지원</li>
+    <li>멀트쓰레드 지원</li>
+  </ul>
+- DCOM 단점
+  <ul>
+    <li>윈도우 95/NT와 썬 Solaris2.5만 지원</li>
+    <li>인터페이스만 상속 지원</li>
+    <li>정적 호출을 위한 인터페이스와 동적 호출을 위한 인터페이스가 일관되지 못함</li>
+    <li>폴트 톨러런스와 로드 밸런싱 사양의 미비</li>
+    <li>기술 구현의 난이도가 높음</li>
+  </ul>
+  
 ## 출처
 - https://ko.wikipedia.org/wiki/%EA%B3%B5%ED%86%B5_%EA%B0%9D%EC%B2%B4_%EC%9A%94%EA%B5%AC_%EB%A7%A4%EA%B0%9C%EC%9E%90_%EA%B5%AC%EC%A1%B0
-- 
+- http://blog.naver.com/bluejames77/80001173027
+- https://copynull.tistory.com/47
