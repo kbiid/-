@@ -68,3 +68,5 @@
   <li>PriorityQueue(int initialCapacity, Comparator<? super E> comparator) </li>
   <li>지정된 Comparator의 정렬 방법에 따라 우선 순위를 할당한다.</li>
 </ul>
+
+출처 : https://gmlwjd9405.github.io/2018/09/06/java-comparable-and-comparator.html
